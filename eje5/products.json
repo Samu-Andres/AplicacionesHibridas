@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Mouse",
+    "description": "Mouse gamer",
+    "price": 3000
+  },
+  {
+    "id": 2,
+    "title": "Teclado",
+    "description": "Teclado mecánico",
+    "price": 7000
+  },
+  {
+  "id": 3,
+  "title": "Auriculares",
+  "description": "Auriculares inalámbricos",
+  "price": 9500
+  }
+]

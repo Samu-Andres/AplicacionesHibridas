@@ -4,24 +4,23 @@ import ProductManager from './managers/productManager.js';
 const app = express();
 const PORT = 3000;
 
-// Middleware para poder leer JSON en el body de las solicitudes
+
 app.use(express.json());
 
-// Instancia del ProductManager
+
 const manager = new ProductManager('products.json');
 
-// Ruta de bienvenida
+
 app.get('/', (req, res) => {
   res.send('Bienvenido a la API de productos 🚀');
 });
 
-// Obtener todos los productos
+
 app.get('/api/products', (req, res) => {
   const products = manager.getProducts();
   res.status(200).json(products);
 });
 
-// Obtener un producto por ID
 app.get('/api/products/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const product = manager.getProductById(id);
@@ -33,7 +32,7 @@ app.get('/api/products/:id', (req, res) => {
   }
 });
 
-// Agregar un producto nuevo
+
 app.post('/api/products', (req, res) => {
   try {
     const product = req.body;
@@ -50,7 +49,7 @@ app.post('/api/products', (req, res) => {
   }
 });
 
-// Actualizar un producto
+
 app.put('/api/products/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const newData = req.body;
@@ -64,7 +63,7 @@ app.put('/api/products/:id', (req, res) => {
   }
 });
 
-// Eliminar un producto
+
 app.delete('/api/products/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const deleted = manager.deleteProductById(id);
@@ -76,7 +75,7 @@ app.delete('/api/products/:id', (req, res) => {
   }
 });
 
-// Levantar el servidor
+
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

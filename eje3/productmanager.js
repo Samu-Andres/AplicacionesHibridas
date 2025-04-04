@@ -6,7 +6,7 @@ class ProductManager {
     this.path = path.resolve(__dirname, fileName);
     this.products = [];
 
-    this.loadProductsFromFile(); // Al crear la instancia, cargamos los productos
+    this.loadProductsFromFile();
   }
 
   loadProductsFromFile() {
